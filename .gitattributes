@@ -1,0 +1,2 @@
+usa/usa.shp filter=lfs diff=lfs merge=lfs -text
+usa/usa.dbf filter=lfs diff=lfs merge=lfs -text
