@@ -7,3 +7,4 @@ plotly
 pyogrio
 fiona
 openpyxl
+mapclassify
