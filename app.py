@@ -2,12 +2,12 @@ import zipfile
 import requests
 import io
 import os
-# import streamlit as st
+import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import plotly.express as px
 import matplotlib.pyplot as plt
-# from streamlit_folium import st_folium
+from streamlit_folium import st_folium
 
 # # This section will need to be rewritten if we even want to keep it. Streamlit throws an error with it.
 # # I think it's because Streamlit uses linux and MacOS is a little different, idk we'll see.
