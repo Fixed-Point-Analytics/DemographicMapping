@@ -9,19 +9,21 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 # from streamlit_folium import st_folium
 
+# # This section will need to be rewritten if we even want to keep it. Streamlit throws an error with it.
+# # I think it's because Streamlit uses linux and MacOS is a little different, idk we'll see.
 
-if not os.path.exists("/usa/usa.shp"):
-  r = requests.get("https://static-data-screeningtool.geoplatform.gov/data-versions/1.0/data/score/downloadable/1.0-shapefile-codebook.zip",stream=True)
-  with zipfile.ZipFile(io.BytesIO(r.content)) as zip_ref:
-      zip_ref.extract("1.0-codebook.csv")
-      with zip_ref.open("usa.zip") as nested_zip:
-        nested_zip_filedata = io.BytesIO(nested_zip.read())
-        with zipfile.ZipFile(nested_zip_filedata) as unzipped_nested_zip:
-          unzipped_nested_zip.extractall("/usa/")
+# if not os.path.exists("/usa/usa.shp"):
+#   r = requests.get("https://static-data-screeningtool.geoplatform.gov/data-versions/1.0/data/score/downloadable/1.0-shapefile-codebook.zip",stream=True)
+#   with zipfile.ZipFile(io.BytesIO(r.content)) as zip_ref:
+#       zip_ref.extract("1.0-codebook.csv")
+#       with zip_ref.open("usa.zip") as nested_zip:
+#         nested_zip_filedata = io.BytesIO(nested_zip.read())
+#         with zipfile.ZipFile(nested_zip_filedata) as unzipped_nested_zip:
+#           unzipped_nested_zip.extractall("/usa/")
 
-r2 = requests.get("https://www2.census.gov/geo/tiger/TIGER2023/ZCTA520/tl_2023_us_zcta520.zip")
-with zipfile.ZipFile(io.BytesIO(r2.content)) as zip_ref:
-  zip_ref.extractall("/ztca")
+# r2 = requests.get("https://www2.census.gov/geo/tiger/TIGER2023/ZCTA520/tl_2023_us_zcta520.zip")
+# with zipfile.ZipFile(io.BytesIO(r2.content)) as zip_ref:
+#   zip_ref.extractall("/ztca")
           
 
 
