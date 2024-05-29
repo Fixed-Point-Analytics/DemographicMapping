@@ -25,21 +25,14 @@ with zipfile.ZipFile(io.BytesIO(r2.content)) as zip_ref:
           
 
 
-geo_data = gpd.read_file("/usa/usa.shp",engine="pyogrio",use_arrow=True)
-df_cols = pd.read_csv("/usa/columns.csv")
+geo_data = gpd.read_file("~/Desktop/FixedPointAnalytics/1.0-shapefile-codebook/usa/usa.shp",engine="pyogrio",use_arrow=True)
+df_cols = pd.read_csv("~/Desktop/FixedPointAnalytics/1.0-shapefile-codebook/usa/columns.csv")
 # zcta = gpd.read_file("/content/ztca/tl_2023_us_zcta520.shp",engine="pyogrio",use_arrow=True).to_crs(geo_data.crs)
-zips_to_tracts = pd.read_excel("ZIP_TRACT_032024.xlsx")
-demograph_data = pd.read_csv("RegionMapPopulated.csv")
+zips_to_tracts = pd.read_excel("~/Desktop/FixedPointAnalytics/ZIP_TRACT_032024.xlsx")
+demograph_data = pd.read_csv("~/Desktop/FixedPointAnalytics/RegionMapPopulated.csv")
 
-
-
-
-
-geo_data = gpd.read_file("/content/usa/usa.shp",engine="pyogrio",use_arrow=True)
 geo_data = geo_data[~geo_data.geometry.isna()]
-df_cols = pd.read_csv("/content/usa/columns.csv")
-zips_to_tracts = pd.read_excel("/content/ZIP_TRACT_032024.xlsx")
-demograph_data = pd.read_csv("/content/RegionMapPopulated.csv")
+
 
 geo_data.GEOID10 = geo_data.GEOID10.astype("int64")
 geo_data_with_zips = geo_data.merge(zips_to_tracts,how="left",left_on="GEOID10",right_on="TRACT")
