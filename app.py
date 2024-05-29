@@ -27,11 +27,11 @@ import matplotlib.pyplot as plt
           
 
 
-geo_data = gpd.read_file("~/Desktop/FixedPointAnalytics/1.0-shapefile-codebook/usa/usa.shp",engine="pyogrio",use_arrow=True)
-df_cols = pd.read_csv("~/Desktop/FixedPointAnalytics/1.0-shapefile-codebook/usa/columns.csv")
+geo_data = gpd.read_file("/usa/usa.shp",engine="pyogrio",use_arrow=True)
+df_cols = pd.read_csv("/usa/columns.csv")
 # zcta = gpd.read_file("/content/ztca/tl_2023_us_zcta520.shp",engine="pyogrio",use_arrow=True).to_crs(geo_data.crs)
-zips_to_tracts = pd.read_excel("~/Desktop/FixedPointAnalytics/ZIP_TRACT_032024.xlsx")
-demograph_data = pd.read_csv("~/Desktop/FixedPointAnalytics/RegionMapPopulated.csv")
+zips_to_tracts = pd.read_excel("ZIP_TRACT_032024.xlsx")
+demograph_data = pd.read_csv("~RegionMapPopulated.csv")
 
 geo_data = geo_data[~geo_data.geometry.isna()]
 
