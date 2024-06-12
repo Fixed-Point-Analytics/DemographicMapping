@@ -56,18 +56,19 @@ full_data = full_data.loc[:,col_choices]
 
 
 states = full_data.SF.unique().tolist()
-continental = states.copy()
-non_continental = ['Hawaii','Alaska','Puerto Rico','American Samoa', 'Guam', 'Northern Mariana Islands','Virgin Islands']
-us49 = full_data.copy()
-for n in non_continental:
-  continental.remove(n)
-  us49 = us49[us49.SF != n]
 
+# # this is only commented out because the data subset only has VT and NH. Once the full dataset is in this will be uncommented.
+# continental = states.copy()
+# non_continental = ['Hawaii','Alaska','Puerto Rico','American Samoa', 'Guam', 'Northern Mariana Islands','Virgin Islands']
+# us49 = full_data.copy()
+# for n in non_continental:
+#   continental.remove(n)
+#   us49 = us49[us49.SF != n]
+# states.reverse()
+# states.append("Continental U.S.")
+# states.append("Entire U.S.")
+# states.reverse()
 
-states.reverse()
-states.append("Continental U.S.")
-states.append("Entire U.S.")
-states.reverse()
 mapping_var = "TPF"
 
 state_choice = st.multiselect(
